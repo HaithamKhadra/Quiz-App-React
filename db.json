@@ -1,0 +1,124 @@
+{
+  "results": [
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following ancient peoples was NOT classified as Hellenic (Greek)?",
+      "correct_answer": "Illyrians",
+      "incorrect_answers": [
+        "Dorians",
+        "Achaeans",
+        "Ionians"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "When did the Battle of the Somme begin?",
+      "correct_answer": "July 1st, 1916",
+      "incorrect_answers": [
+        "August 1st, 1916",
+        "July 2nd, 1916",
+        "June 30th, 1916"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In 1720, England was in massive debt, and became in involved in the South Sea Bubble. Who was the main mastermind behind it?",
+      "correct_answer": "John Blunt",
+      "incorrect_answers": [
+        "Daniel Defoe",
+        "Robert Harley",
+        "John Churchill"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What was the first sport to have been played on the moon?",
+      "correct_answer": "Golf",
+      "incorrect_answers": [
+        "Football",
+        "Tennis",
+        "Soccer"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who was the first prime minister of Canada?",
+      "correct_answer": "John Macdonald",
+      "incorrect_answers": [
+        "John Abbott",
+        "Alexander Mackenzie",
+        "Robert Borden"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In 1453, which important city fell?",
+      "correct_answer": "Constantinople",
+      "incorrect_answers": [
+        "Rome",
+        "Hamburg",
+        "Athens"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What was the name commonly given to the ancient trade routes that connected the East and West of Eurasia?",
+      "correct_answer": "Silk Road",
+      "incorrect_answers": [
+        "Spice Road",
+        "Clay Road",
+        "Salt Road"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "On what street did the 1666 Great Fire of London start?",
+      "correct_answer": "Pudding Lane",
+      "incorrect_answers": [
+        "Baker Street",
+        "Houses of Parliament",
+        "St Paul&#039;s Cathedral"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who rode on horseback to warn the Minutemen that the British were coming during the U.S. Revolutionary War?",
+      "correct_answer": "Paul Revere",
+      "incorrect_answers": [
+        "Thomas Paine",
+        "Henry Longfellow",
+        "Nathan Hale"
+      ]
+    },
+    {
+      "category": "History",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Abolitionist John Brown raided the arsenal in which Virginia Town?",
+      "correct_answer": "Harper&#039;s Ferry",
+      "incorrect_answers": [
+        "Richmond",
+        "Harrisonburg",
+        "Martinsburg"
+      ]
+    }
+  ]
+}

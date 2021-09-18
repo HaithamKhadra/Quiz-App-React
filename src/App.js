@@ -5,6 +5,7 @@ import Question from "./components/Question.js";
 
 const App = () => {
   
+  const [hideForm, sethideForm] = useState('')
   const [amount, setAmount] = useState(10);
   const [category, setCategory] = useState(10);
   const [difficulty, setDifficulty] = useState('easy');
@@ -61,16 +62,19 @@ const App = () => {
   //     console.log('incorrect');
   //   }
   // }
+  const onClickbtn = () => {
+    sethideForm('hide')
+  }
 
   return (
       <div className="App">
 
-        <form onSubmit={getSearch} className="search-form" action="" method="get">
+        <form className={`search-form ${hideForm}`} onSubmit={getSearch} action="" method="get">
           <input className="search-bar" type="text" onChange={handleAmount} placeholder='Search Amount' value={amount} name="q"/>
           <input className="search-bar" type="text" onChange={handleCat} placeholder='Search Cat' value={category} name="q"/>
           <input className="search-bar" type="text" onChange={handleType} placeholder='Search Type' value={type} name="q"/>
           <input className="search-bar" type="text" onChange={handleDif} placeholder='Search diff' value={difficulty} name="q"/>
-          <button className="search-button" type="submit">
+          <button onClick={onClickbtn} className="search-button" type="submit">
             filter quiz
           </button>
         </form> 

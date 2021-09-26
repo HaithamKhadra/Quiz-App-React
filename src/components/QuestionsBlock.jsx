@@ -1,30 +1,52 @@
 import { useState } from 'react';
 import Question from "./Question.jsx";
+import FinalScore from "./FinalScore.jsx";
+
 
 const QuestionsBlock = props => {
 
-  const {quizQs, showQuiz} = props
+  const { quizQs, showQuiz } = props
 
-  const [counter, setCounter] = useState(0)
+  const [score, setScore] = useState(0)
+  const [clicksCounter, setClicksCounter] = useState(0)
 
-  const IncrementCounter = () => {
-    setCounter(counter + 1)
+  const IncrementScore = () => {
+    setScore(score + 1)
+  }
+
+  const IncrementClicksCounter = () => {
+    setClicksCounter(clicksCounter + 1)
   }
 
   return (
     <section className={`${showQuiz}`}>
-      <h1>{counter}</h1>
+      <h1>{score}</h1>
       {
         quizQs.response_code === 0
-        ? quizQs.results.map((qs, ID) => (
+          ? quizQs.results.map((qs, ID) => (
             <Question
               key={ID}
               ID={ID}
               question={qs}
-              IncrementCounter={IncrementCounter}
-              />
+              IncrementScore={IncrementScore}
+              IncrementClicksCounter={IncrementClicksCounter}
+            />
           ))
-        : <div>Click to Start</div>
+          : <div>Click to Start</div>
+      }
+      {
+        quizQs.response_code === 0
+
+          ? clicksCounter === quizQs.results.length
+            ? <section className={`${showQuiz}`}>
+              {
+                quizQs.response_code === 0
+                  ? <FinalScore amount={quizQs.results.length} counter={score} />
+                  : null
+              }
+            </section>
+            : null
+          : null
       }
     </section>
   )

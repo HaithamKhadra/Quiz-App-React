@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const Form = props => {
@@ -7,39 +7,55 @@ const Form = props => {
 
   const [hideForm, sethideForm] = useState('')
   
-  const [amount, setAmount] = useState(10);
-  const [category, setCategory] = useState(10);
-  const [difficulty, setDifficulty] = useState('easy');
-  const [type, setType] = useState('multiple');
+  const [amount, setAmount] = useState(5);
+  
+  const [options, setOptions] = useState(null);
+  const [questionCategory, setQuestionCategory] = useState('');
 
+  const [typeOfQuestions, setTypeOfQuestions] = useState('');
+  
+  const [difficulty, setDifficulty] = useState('')
+
+  const onAmountChange = e =>{
+    setAmount(e.target.value)
+  }
+
+  const onDifficultyChange = e =>{
+    setDifficulty(e.target.value)
+  }
+  
+  const handleCategoryChange = e => {
+    setQuestionCategory(e.target.value)
+  }
+  
+  const onTypeChange = e => {
+    setTypeOfQuestions(e.target.value);
+  }
+  
   const onClickbtn = () => {
     sethideForm('hide');
     showQuizFn();
   }
 
-  const handleAmount = (e) => {
-    setAmount(e.target.value);
-  }
-  const handleCat = (e) => {
-    setCategory(e.target.value);
-  }
-  const handleType = (e) => {
-    setType(e.target.value);
-  }
-  const handleDif = (e) => {
-    setDifficulty(e.target.value);
-  }
+  useEffect(() => {
+
+    fetch('https://opentdb.com/api_category.php')
+      .then(res => res.json())
+      .then(data => {
+        setOptions(data.trivia_categories)
+      })
+    
+  }, [questionCategory])
 
   const getSearch = (e) => {
     e.preventDefault();
-    setAmount('');
-    setCategory('');
-    setType('');
-    setDifficulty('');
+    // setAmount('');
+    // setType('');
+    // setDifficulty('');
 
     const getQuestions = async () => {
       
-      const response = await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`)
+      const response = await fetch(`https://opentdb.com/api.php?amount=${amount}&category=${questionCategory}&difficulty=${difficulty}&type=${typeOfQuestions}`)
       const data = await response.json();
       setQuizQsfn(data);
     }
@@ -47,14 +63,44 @@ const Form = props => {
   }
 
   return (
-    <form className={`search-form ${hideForm}`} onSubmit={getSearch} action="" method="get">
-      <input className="search-bar" type="text" onChange={handleAmount} placeholder='Search Amount' value={amount} name="q"/>
-      <input className="search-bar" type="text" onChange={handleCat} placeholder='Search Cat' value={category} name="q"/>
-      <input className="search-bar" type="text" onChange={handleType} placeholder='Search Type' value={type} name="q"/>
-      <input className="search-bar" type="text" onChange={handleDif} placeholder='Search diff' value={difficulty} name="q"/>
-      <button onClick={onClickbtn} className="search-button" type="submit">
-        filter quiz
-      </button>
+    <form className={`${hideForm}`} onSubmit={getSearch} action="" method="get">
+
+      <h2>Amount of Questions:</h2>
+      <input type="number" max='50' min='1' step='1' onChange={onAmountChange} value={amount}/>
+      
+      <div>
+        <h2>Category:</h2>
+        <select value={questionCategory} onChange={handleCategoryChange}>
+          {options ?
+            options.map((option) => (
+              <option value={option.id} key={option.id}>
+                {option.name}
+              </option>
+            )) : null}
+        </select>
+      </div>
+
+      <div>
+        <h2>Type of Questions:</h2>
+        <select value={typeOfQuestions} onChange={onTypeChange}>
+          <option value="" disabled>Choose Type of Questions</option>
+          <option value="multiple">Multiple Choice</option>
+          <option value="boolean">True/False</option>
+        </select>
+      </div>
+
+      <div>
+        <h2>Difficulty:</h2>
+        <select value={difficulty} onChange={onDifficultyChange}>
+          <option value="" disabled>All</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <button onClick={onClickbtn} type="submit">GET QUIZED</button>
+
     </form> 
   )
 }

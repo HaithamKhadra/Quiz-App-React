@@ -1,4 +1,10 @@
 import { useState, useEffect } from "react";
+import Button from '@mui/material/Button';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 
 const Form = props => {
@@ -99,7 +105,8 @@ const Form = props => {
         </select>
       </div>
 
-      <button onClick={onClickbtn} type="submit">GET QUIZED</button>
+      <Button variant="contained" onClick={onClickbtn} type="submit">START QUIZ</Button>
+      {/* <Button>START QUIZ</Button> */}
 
     </form> 
   )

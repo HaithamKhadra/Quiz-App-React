@@ -17,13 +17,13 @@ const App = () => {
   }
 
   return (
-      <div className="App">
+      <>
         
         <Form showQuizFn={showQuizFn} setQuizQsfn={setQuizQsfn}/>
 
         <QuestionsBlock showQuiz={showQuiz} quizQs={quizQs}/>
     
-      </div>
+      </>
   );
 }
 

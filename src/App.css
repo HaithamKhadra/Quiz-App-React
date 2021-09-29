@@ -43,7 +43,7 @@ html, body, .quizApp {
   height: 500px;
   width: 80%;
   position: absolute;
-  top: 200px;
+  top: 170px;
 }
 
 .totest {
@@ -114,4 +114,8 @@ label + input[type=radio] + label {
   margin: 20px;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.classss {
+  font-size: 2rem;
 }

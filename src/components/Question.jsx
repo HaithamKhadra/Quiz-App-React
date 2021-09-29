@@ -18,12 +18,37 @@ const Question = props => {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
+  const decodeHTML = (html) => {
+    const txt = document.createElement('textarea')
+    txt.innerHTML = html
+    return txt.value
+  }
+
+  // const encodedQuestions = useSelector((state) => state.questions)
+  
   useEffect(() => {
     if (!question) {
       return;
     }
-    let answers = [...question.incorrect_answers];
-    answers.splice(getRandomInt(question.incorrect_answers.length), 0, question.correct_answer);
+
+
+    // const decodedQuestions = encodedQuestions.map(q => {
+    //   return {
+    //     ...q,
+    //     question: decodeHTML(q.question),
+    //     correct_answer: decodeHTML(q.correct_answer),
+    //     incorrect_answers: q.incorrect_answers.map(a => decodeHTML(a))
+    //   }
+    // })
+
+
+    let answerss = [...question.incorrect_answers];
+    answerss.splice(getRandomInt(question.incorrect_answers.length), 0, question.correct_answer);
+
+    let answers = answerss.map(ans => {
+      console.log(decodeHTML(ans));
+      return decodeHTML(ans)
+    })
 
     setOptions(answers);
   }, [question]);

@@ -20,7 +20,7 @@ const QuestionsBlock = props => {
 
   return (
     <section className={`${showQuiz}`}>
-      <h1>{score}</h1>
+      <h1 className="score">{score}</h1>
       {
         quizQs.response_code === 0
           ? quizQs.results.map((qs, ID) => (

@@ -1,25 +1,12 @@
 import { useState, useEffect } from 'react';
 import React from "react";
 
-// import Radio from '@mui/material/Radio';
-// import RadioGroup from '@mui/material/RadioGroup';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import FormControl from '@mui/material/FormControl';
-// import FormLabel from '@mui/material/FormLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
-
-// <FormControl component="fieldset">
-//       <FormLabel component="legend">Gender</FormLabel>
-//       <RadioGroup
-//         aria-label="gender"
-//         defaultValue="female"
-//         name="radio-buttons-group"
-//       >
-//         <FormControlLabel value="female" control={<Radio />} label="Female" />
-//         <FormControlLabel value="male" control={<Radio />} label="Male" />
-//         <FormControlLabel value="other" control={<Radio />} label="Other" />
-//       </RadioGroup>
-//     </FormControl>
 
 const Question = props => {
 
@@ -53,40 +40,75 @@ const Question = props => {
     }, 2000);
   }
 
-  const style = {
-    'position': 'absolute',
-    'top': '100px',
-    'left': '50px',
-    'backgroundColor': 'green',
-    'color': 'yellow',
-    'height': '300px',
-    'width': '500px'
-  }
+  // const style = {
+  //   'position': 'absolute',
+  //   'top': '100px',
+  //   'left': '50px',
+  //   'backgroundColor': 'green',
+  //   'color': 'yellow',
+  //   'height': '300px',
+  //   'width': '500px'
+  // }
 
 
   if (question.question !== undefined) {
-    const renderQuestion = React.createElement("div", { dangerouslySetInnerHTML: { __html: `<div>${question.question}</div>` } });
+
+    const renderQuestion = React.createElement("h2", { dangerouslySetInnerHTML: { __html: `${question.question}` } });
+    
     return (
-      <div style={style} className={`${hide}`}>
+      <div className={`abs totest ${hide}`}>
+        <FormControl component="fieldset">
+
         
         {renderQuestion}
 
-        <form id={`${ID}`}>
-          <fieldset >
+        {/* <form id={`${ID}`}>
+          <fieldset > */}
             {
               options
-                .map((answer, key) => (
-                  <div key={key} >
-                    <input onClick={onSubmitAnswer} type="radio" name={ID} value={answer} />
-                    <label >{answer}</label>
+              .map((answer, key) => (
+                <div key={key} >
+                    <RadioGroup
+                      aria-label="gender"
+                      // name="radio-buttons-group"
+                    >
+                    {/* <input onClick={onSubmitAnswer} type="radio" value={answer} />   */}
+                      <FormControlLabel onClick={onSubmitAnswer} value={answer} control={<Radio />} label={`${answer}`} />
+                    {/* <FormLabel component="legend">{answer}</FormLabel> */}
+                    </RadioGroup>
                   </div>
                 ))
-            }
-          </fieldset>
-        </form>
+              }
+          {/* </fieldset>
+        </form> */}
+        </FormControl>
+
       </div>
     )
   }
+  // if (question.question !== undefined) {
+  //   const renderQuestion = React.createElement("div", { dangerouslySetInnerHTML: { __html: `<div>${question.question}</div>` } });
+  //   return (
+  //     <div style={style} className={`${hide}`}>
+        
+  //       {renderQuestion}
+
+  //       <form id={`${ID}`}>
+  //         <fieldset >
+  //           {
+  //             options
+  //               .map((answer, key) => (
+  //                 <div key={key} >
+  //                   <input onClick={onSubmitAnswer} type="radio" name={ID} value={answer} />
+  //                   <label >{answer}</label>
+  //                 </div>
+  //               ))
+  //           }
+  //         </fieldset>
+  //       </form>
+  //     </div>
+  //   )
+  // }
 
 
 }

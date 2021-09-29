@@ -38,8 +38,8 @@ html, body, .quizApp {
 .abs {
   justify-self: center;
   margin: 0 auto;
-  background-color: red;
-  color: yellow;
+  background-color: rgba(227, 202, 255);
+  /* color: yellow; */
   height: 500px;
   width: 80%;
   position: absolute;
@@ -49,4 +49,69 @@ html, body, .quizApp {
 .totest {
   border: 3px solid blue;
   border-radius: 20px;
+}
+
+.sah {
+  background-color: rgba(20, 255, 11, 0.753);
+  border-radius: 30px;
+  z-index: 999999;
+}
+
+/* .la {
+  background-color: rgba(255, 13, 13, 0.753);
+  border-radius: 30px;
+} */
+
+/* span.css-vqmohf-MuiButtonBase-root-MuiRadio-root {
+  display: none;
+}  */
+
+/* MuiFormControlLabel-root 
+MuiFormControlLabel-labelPlacementEnd 
+css-j204z7-MuiFormControlLabel-root */
+
+/* label.css-j204z7-MuiFormControlLabel-root {
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  background-color: beige;
+} */
+
+/* .input {
+
+} */
+
+input[type=radio] {
+  position: absolute;
+  /* visibility: hidden; */
+  /* display: none; */
+}
+
+input[type=radio]::after {
+  width: 100px;
+}
+
+label {
+  color: #332f35;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+}
+/* 
+input[type=radio]:checked + label{
+  color: #332f35;
+  background: #332f3563;
+}
+
+label + input[type=radio] + label {
+  border-left: solid 3px #332f3563;
+} */
+
+.radio-group {
+  border: solid 3px #332f3563;
+  /* display: inline-block; */
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
 }

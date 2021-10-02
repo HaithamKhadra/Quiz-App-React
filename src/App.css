@@ -160,3 +160,16 @@ html, body {
   border-top: solid 15px transparent;
   border-left: solid 15px transparent;
 }
+
+@media screen and (min-width: 1200px) {
+  .qs-card {
+
+    /* height: 75%; */
+    width: 50%;
+  
+  }
+
+  .qs-card__answer {
+    width: 50%;
+  }
+}

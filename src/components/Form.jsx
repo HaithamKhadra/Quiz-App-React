@@ -14,7 +14,7 @@ const Form = props => {
 
   const [hideForm, sethideForm] = useState('')
 
-  const [amount, setAmount] = useState(5);
+  const [amount, setAmount] = useState('');
 
   const [options, setOptions] = useState(null);
   const [questionCategory, setQuestionCategory] = useState('');
@@ -90,7 +90,7 @@ const Form = props => {
           }}
           sx={{ m: 1, width: 300 }}
           variant="filled"
-          placeholder="From 1 t0 50 only!"
+          placeholder="From 1 to 50 only!"
         />
 
         <FormControl sx={{ m: 1, width: 300 }}>

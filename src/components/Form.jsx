@@ -56,9 +56,6 @@ const Form = props => {
 
   const getSearch = (e) => {
     e.preventDefault();
-    // setAmount('');
-    // setType('');
-    // setDifficulty('');
 
     const getQuestions = async () => {
 

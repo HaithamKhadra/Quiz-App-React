@@ -1,19 +1,23 @@
+import Button from '@mui/material/Button';
 
 const FinalScore = props => {
 
-
   const {counter, amount} = props
 
-  const style = {
-    'position': 'absolute',
-    'top': '100px',
-    'left': '5px',
-    'zIndex': '-999'
+  const tryAgain = () => {
+    return window.location.reload();
   }
 
   return (
-    <div style={style}>
-      <h1>YOUR FINAL SCORE IS: {counter} OUT OF {amount}</h1>      
+    <div className="final-score">
+      <p className="final-score__txt">FINAL SCORE:</p> 
+      <p className="final-score__correct">
+        <strong>{counter} <span>correct</span></strong> 
+        <strong><span>out of</span> {amount}</strong>
+      </p>  
+      <Button className="final-score__btn" onClick={tryAgain} variant="contained">
+          TRY AGAIN!
+      </Button>    
     </div>
   )
 }

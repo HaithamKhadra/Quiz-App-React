@@ -13,9 +13,9 @@ const Question = props => {
   }
 
   const decodeHTML = (html) => {
-    const txt = document.createElement('textarea')
-    txt.innerHTML = html
-    return txt.value
+    const txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
   }
 
 
@@ -29,7 +29,7 @@ const Question = props => {
 
     let answers = answerss.map(ans => {
       console.log(decodeHTML(ans));
-      return decodeHTML(ans)
+      return decodeHTML(ans);
     })
 
     setOptions(answers);
@@ -40,16 +40,15 @@ const Question = props => {
     // e.target.value === question.correct_answer
     //   ? IncrementScore()
     //   : console.log('incorrect');
-    console.log(e.target.dataset.value);
     if (e.target.dataset.value === question.correct_answer) {
       IncrementScore();
       e.target.style.background = '#00ff00';
       e.target.style.color = '#fff'
-      console.log('if');
+      // console.log('if');
     } else {
       e.target.style.background = '#ff0000';
       e.target.style.color = '#fff'
-      console.log('else');
+      // console.log('else');
     }
     setTimeout(() => {
       sethide('hide');

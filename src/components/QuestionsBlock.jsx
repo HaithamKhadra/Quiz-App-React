@@ -20,8 +20,13 @@ const QuestionsBlock = props => {
 
   return (
     <section className={`${showQuiz}`}>
-      <h1 className="progress">{score}</h1>
-   
+
+      {
+        quizQs.response_code === 0 && quizQs.results.length && clicksCounter !== quizQs.results.length
+        ? <h1 className="progress">Progress: {score} / {quizQs.results.length}</h1>
+        : null
+      }
+
       {
         quizQs.response_code === 0
           ? quizQs.results.map((qs, ID) => (
@@ -33,7 +38,7 @@ const QuestionsBlock = props => {
               IncrementClicksCounter={IncrementClicksCounter}
             />
           ))
-          : <div>Click to Start</div>
+          : <div className='circle loader'></div>
       }
       {
         quizQs.response_code === 0

@@ -173,3 +173,26 @@ html, body {
     width: 50%;
   }
 }
+
+
+@media screen and (max-width: 380px) {
+  .qs-card {
+
+    height: 80%;
+  
+  }
+  
+  .qs-card__question {
+
+    font-size: 1.125rem;
+  }
+  
+  .qs-card__answer {
+    font-size: .925rem;
+  }
+  
+  .final-score__correct > strong > span {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+}

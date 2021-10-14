@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Quiz Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## General info
 
-## Available Scripts
+- A quiz app powered by **[Open Trivia DB](https://opentdb.com/)**.
+- Visitors are able to choose any amount of questions ranging from 1 to 50 inclusive. In addition to optionally selecting a Category, a type of questions, and choosing the difficulty of to-be-fetched questions.
 
-In the project directory, you can run:
+## My process
 
-### `npm start`
+- The main purpose of this project was to test my ability in dealing with a little bit more complex API than the ones I worked with before.
+- I thought My biggest challenge was going to be the implementing the form which is going to fetch a set of questions, but that was fairly easy task compared to rendering the answers in every question in random order, with respect to their original order in the API.
+- Another challenge that I faced was stacking the card over each other, the purpose of this approach is hiding the card that the player answered so that the next question appear after roughly one and a half seconds (ofcourse using setTimeout).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built with:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- ### _Client side_:
 
-### `npm test`
+  - **Semantic HTML5 markup**
+  - **CSS** - _Flexbox_
+  - **[Material UI](https://mui.com/)**
+  - **Javascript (ES6+)**
+  - **[React](https://reactjs.org/)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Mobile-first workflow
+- Responsive design (Mobile, tablets, large screens)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Live Site URL](https://quiz-haith.vercel.app/)
+- [Open Trivia DB](https://opentdb.com/)
